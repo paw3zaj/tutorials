@@ -1,49 +1,21 @@
 <!DOCTYPE html>
 <html>
-    <head>
-       
-    </head>
-        <body>
-            
 
-            <div id="app">
-                <h1>{{ title }}</h1>
-                <!-- <p v-show="inStock">In Stock</p> -->
-                <p v-if="inStock">In Stock</p>
-                <p v-else>Out in Stock</p>
+<head>
 
-                <ul>
-                    <li v-for="detail in details">{{ detail }}</li>
-                </ul>
+</head>
 
-                <div v-for="(variant, index) in variants" 
-                    :key="variant.variantId"
-                    class="color-box"
-                    :style="{ backgroundColor: variant.variantColor }"
-                    @mouseover="updateProduct(index)">
-                </div>
-        
-            <div class="product-image">
-                <img v-bind:src="image" >
-            </div>
-
-            <button v-on:click="addToCard"
-                    :disabled="!inStock"
-                    :class="{ disabledButton: !inStock }">
-                Add to Cart
-            </button>
-
-            <div class= "cart">
-                <p>Cart({{cart}})</p>
-                </div>
+<body>
 
 
+    <div id="app">
+        <product :premium="premium"></product>
+    </div>
 
-</div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+</body>
 
-            <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
-            <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-            <script src="main.js"></script>
-            <link rel="stylesheet" href="style.css">
-        </body>
 </html>
